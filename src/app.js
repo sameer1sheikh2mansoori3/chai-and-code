@@ -15,4 +15,10 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
-export { app }
+import router from "./routes/user.route.js"
+import registerUser from "./controllers/user.controller.js"
+
+app.use("/api/v1" , registerUser);
+
+
+export { app };
